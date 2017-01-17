@@ -44,7 +44,7 @@ func newDocumentsTestHttpClient() WebClient {
 // Deals with preparing a response for document requests.
 func (c *documentsTestClient) Do(req *http.Request) (resp *http.Response, err error) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		path := strings.TrimPrefix(req.URL.Path, "/_db//juntos")
+		path := strings.TrimPrefix(req.URL.Path, "/_db//microfoxx")
 		docRegExp := regexp.MustCompile("^/(\\w+)(\\?(.*))?$")
 		countRegExp := regexp.MustCompile("^/(\\w+)/count(\\?(.*))?$")
 		docKeyRegExp := regexp.MustCompile("^/(\\w+)/(\\w+)(\\?(.*))?$")

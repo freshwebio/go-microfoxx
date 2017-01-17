@@ -70,7 +70,7 @@ func (c *clientImpl) CreateDoc(coll string, doc interface{}) *types.DocumentOpRe
 	return &docOpInfo
 }
 
-// GetDocs deals with preparing and executing a request to a JuntosFoxx service
+// GetDocs deals with preparing and executing a request to a microfoxx service
 // implementation
 func (c *clientImpl) GetDocs(coll string, params *types.DocumentRetrievalParams) *types.DocumentsResult {
 	// First build the query parameters from the document retrieval parameters.
@@ -183,7 +183,7 @@ func (c *clientImpl) GetDocCount(coll string, params *types.DocumentRetrievalPar
 }
 
 // RemoveDoc deals with removing the document with the provided key
-// from the specified collection in the underlying data store of the JuntosFoxx app instance.
+// from the specified collection in the underlying data store of the microfoxx app instance.
 func (c *clientImpl) RemoveDoc(coll string, key string) *types.DocumentOpResult {
 	req := c.prepareRequest("DELETE", "/"+coll+"/"+key, nil, nil)
 	resp, err := c.httpClient.Do(req)

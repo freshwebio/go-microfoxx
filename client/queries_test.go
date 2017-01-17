@@ -28,7 +28,7 @@ func newQueriesTestHttpClient() WebClient {
 // Deals with preparing a response for cursor requests.
 func (c *queriesTestClient) Do(req *http.Request) (resp *http.Response, err error) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		path := strings.TrimPrefix(r.URL.Path, "/_db//juntos")
+		path := strings.TrimPrefix(r.URL.Path, "/_db//microfoxx")
 		switch path {
 		case "/insert":
 			c.insert(w, r)

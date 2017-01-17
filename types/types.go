@@ -4,7 +4,7 @@ import "io"
 
 // Graph provides the type for a definition of a graph
 // to be sent to or stored in the ArangoDB data store exposed
-// through the juntos foxx service.
+// through the microfoxx service.
 type Graph struct {
 	Name      string      `json:"name"`
 	Relations []*Relation `json:"relations"`

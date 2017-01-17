@@ -29,7 +29,7 @@ var (
 )
 
 // Client provides the base definition for all the functionality provided
-// to interact with the Juntos service layer sitting on top of an ArangoDB database.
+// to interact with the microfoxx service layer sitting on top of an ArangoDB database.
 type Client interface {
 	Refresh() error
 	GetDocs(coll string, params *types.DocumentRetrievalParams) *types.DocumentsResult
@@ -52,7 +52,7 @@ type Client interface {
 }
 
 // WebClient provides a basis for the http client functionality
-// utilised by a Juntos Arango client implementation to make HTTP requests.
+// utilised by a go-microfoxx client implementation to make HTTP requests.
 type WebClient interface {
 	Do(req *http.Request) (*http.Response, error)
 	Post(url string, bodyType string, body io.Reader) (*http.Response, error)
@@ -66,7 +66,7 @@ type clientImpl struct {
 }
 
 // NewClient deals with creating a new client setup with the provided connection
-// Result to be used on every request to the Juntos service for the provided database.
+// Result to be used on every request to the microfoxx service for the provided database.
 // Sessions are kept alive as long as they are being accessed, a session expires 5 minutes after
 // the last time the session was accessed.
 // It is up to the user to initialise a new session by calling a client's Refresh() method.
