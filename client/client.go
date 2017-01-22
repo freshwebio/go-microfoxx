@@ -138,7 +138,6 @@ func (c *clientImpl) prepareRequest(method string, path string, qParams url.Valu
 	if qParams != nil && len(qParams) > 0 {
 		req.URL.RawQuery = qParams.Encode()
 	}
-	req.Header = make(http.Header)
 	req.Header.Add("X-Session-Id", c.sessionInfo.SID)
 	return req
 }
